@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dan's JavaScript Clock</title>
+        <script>
+            // Define a function to display the current time
+            function displayTime(){
+        var elt = document.getElementById("clock");  // Find element with id="clock"
+        var now = new Date();                        // Get current time
+        elt.innerHTML = now.toLocaleTimeString();    // make elt display it
+        setTimeout(displayTime, 1000);               // run again in 1 second
+        }
+        window.onload = displayTime;  //Start displaying the time when the document loads.
+        </script>
+        <style>
+            #clock {
+                font: bold 50pt sans;
+                background: rgb(217, 219, 62) 10px;
+                border: solid black 6px;
+                border-radius: 10px;
+                padding: 15px;
+            }
+            body {
+                background-color: #8fcbcc;}
+            </style>
+    </head>
+    <body>
+        <h1>The Current Time of Dan:</h1>
+        <span id="clock"></span>  <!-- The time gets inserted here -->
+    </body>
+</html>
